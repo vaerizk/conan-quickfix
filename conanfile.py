@@ -27,6 +27,9 @@ class QuickFIXConan(ConanFile):
         "emx": False,
         "ssl": False
     }
+
+    revision_mode = "scm"
+
     generators = "cmake_paths"
     no_copy_source = True
 
