@@ -62,4 +62,8 @@ class QuickFIXConan(ConanFile):
         cmake.install()
 
     def package_info(self):
+        self.cpp_info.includedirs = ["include"]
+        if not self.options.ssl:
+            self.cpp_info.system_libs = ["ws2_32"]
         self.cpp_info.libs = tools.collect_libs(self)
+        self.cpp_info.resdirs = ["share"]
